@@ -2,6 +2,6 @@
   "name": "API.AI VFBot Webhook",
   "description": "API.AI VFBot",
   "repository": "https://github.com/Balachandar-R/VFBot",
-  "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/UST_Global_logo_2014_wiki.svg/1200px-UST_Global_logo_2014_wiki.svg.png",
+  "logo": "http://xvir.github.io/img/apiai.png",
   "keywords": ["api.ai", "natural language"]
 }
