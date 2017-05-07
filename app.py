@@ -43,17 +43,16 @@ def makeWebhookResult(req):
         
     emi = (princ_amt*interest_rate*(1+interest_rate)**months)/((1+interest_rate)**(months-1))    
     #print(emi)    
-    #cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
+    
 
-    #speech_response = "The cost of shipping to"+str(months)
-    speech = "We will assist you with the financial assistance of "+str(princ_amt)+"Your monthly EMI will be approximately "+str(emi)
+    
+    speech = "We will assist you with the financial assistance of "+str(princ_amt)+"Your monthly EMI will be approximately "+str(emi)+" Do you have any Existing Loan in your name?"
     
     print("Response:")
     print(speech)
 
     return {
-        #"speech": speech_response,
-        #"displayText": speech_response,
+        
         "speech": speech,
         "displayText": speech,
         #"data": {},
@@ -68,5 +67,4 @@ if __name__ == '__main__':
     print "Starting app on port %d" % port
 
     app.run(debug=True, port=port, host='0.0.0.0')
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
+
