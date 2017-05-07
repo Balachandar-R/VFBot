@@ -1,3 +1,22 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @Balachandar-R
+ Sign out
+ Unwatch 1
+  Star 0
+  Fork 59 Balachandar-R/shipping-costs-sample
+forked from svet4/shipping-costs-sample
+ Code  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
+Branch: master Find file Copy pathshipping-costs-sample/app.py
+55c305b  20 hours ago
+@Balachandar-R Balachandar-R Update app.py
+1 contributor
+RawBlameHistory     
+Executable File  71 lines (51 sloc)  1.9 KB
 #!/usr/bin/env python
 
 import urllib
@@ -28,33 +47,34 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "shipping.cost":
+    if req.get("result").get("action") != "DefaultWelcomeIntent.DefaultWelcomeIntent-custom.vehiclefinance-custom":
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("shipping-zone")
-    #months = parameters.get("")
-    months = 12
-    #princ_amt = parameters.get("")
-    princ_amt = 20000
+    #zone = parameters.get("shipping-zone")    
+    months = req.get("result").get("parameters").get("duration").get("amount")
+    princ_amt = req.get("result").get("parameters").get("amount").get("amount")
+    #months=12
+    #princ_amt=2000
     interest_rate = 0.13
     
-    emi = (princ_amt*interest_rate*(1+interest_rate)**months)/((1+interest_rate)**(months-1))
-    print(emi)
     
-    cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
+        
+    emi = (princ_amt*interest_rate*(1+interest_rate)**months)/((1+interest_rate)**(months-1))    
+    #print(emi)    
+    #cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
 
-    speech = "The cost of shipping to " + zone + " is " + str(cost[zone]) + " euros."
-    speech_response = "We will assist you with the financial assistance of"+princ_amt+"Your monthly EMI will be approximately"+emi+"Do you have any existing vehicle loan in your name?"
+    #speech_response = "The cost of shipping to"+str(months)
+    speech = "We will assist you with the financial assistance of "+str(princ_amt)+"Your monthly EMI will be approximately "+str(emi)
     
     print("Response:")
     print(speech)
 
     return {
-        "speech": speech_response,
-        "displayText": speech_response,
-        #"speech": speech,
-        #"displayText": speech,
+        #"speech": speech_response,
+        #"displayText": speech_response,
+        "speech": speech,
+        "displayText": speech,
         #"data": {},
         # "contextOut": [],
         "source": "apiai-onlinestore-shipping"
@@ -67,3 +87,5 @@ if __name__ == '__main__':
     print "Starting app on port %d" % port
 
     app.run(debug=True, port=port, host='0.0.0.0')
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
