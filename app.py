@@ -1,22 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @Balachandar-R
- Sign out
- Unwatch 1
-  Star 0
-  Fork 59 Balachandar-R/shipping-costs-sample
-forked from svet4/shipping-costs-sample
- Code  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathshipping-costs-sample/app.py
-55c305b  20 hours ago
-@Balachandar-R Balachandar-R Update app.py
-1 contributor
-RawBlameHistory     
-Executable File  71 lines (51 sloc)  1.9 KB
 #!/usr/bin/env python
 
 import urllib
